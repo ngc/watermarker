@@ -10,7 +10,7 @@ Automatic advanced watermark producing tool. This tool uses randomized image dis
 
 Let's think of a hypothetical yet possible scenario in which for some reason NASA wanted to watermark this image to avoid someone reposting it and taking credit for it.
 
-<img src="/home/nathan/Desktop/README/nasa_original.jpg"
+<img src="https://github.com/thaniel-c/misc-tools-and-projects/blob/master/WatermarkerResources/nasa_original.jpg"
      alt="nasa_original"
      width ="400" height="400" />
 
