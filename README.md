@@ -18,7 +18,7 @@ Using Watermarker they can apply their official logo
 
 <img src="https://github.com/thaniel-c/misc-tools-and-projects/blob/master/WatermarkerResources/nasa_logo.png"
      alt="nasa_original"
-     width ="50" height="50" />
+     width ="60" height="50" />
      
 
 When the images are given as inputs into Watermarker the resulting image will be saved as 'done.png' in its root directory. (This is with maximum distortion which can be tuned)
