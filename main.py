@@ -54,7 +54,7 @@ def apply():
         os.remove(f)
 
     p = Augmentor.Pipeline("data/image/logo")
-    p.random_distortion(probability=1, grid_width=4, grid_height=4, magnitude=50) #Distorts watermark based on parameters
+    p.random_distortion(probability=float(int(probability_entry.get()) / 100), grid_width=int(grid_W_entry.get()), grid_height=int(grid_H_entry.get()), magnitude=int(distortion_entry.get())) #Distorts watermark based on parameters
     p.sample(1) #Saves distorted watermark to logo/output in a png format
 
     img2 =  Image.open((glob.glob("data/image/logo/output/*.png"))[0]) #Augmentor doesn't allow set paths so you must pull the first file in a specific directory
@@ -82,19 +82,23 @@ button = tk.Button(r, text='Produce Image', width=25, command=apply).grid(row=4,
 
 #Distortion
 distortion_entry_label = tk.Label(r, text="Distortion").grid(row=2, column=5)
-distortion_entry = tk.Entry(r).grid(row=2, column=6)
+distortion_entry = tk.Entry(r)
+distortion_entry.grid(row=2, column=6)
 
 #Probability
-distortion_entry_label = tk.Label(r, text="Probability").grid(row=3, column=5)
-distortion_entry = tk.Entry(r).grid(row=3, column=6)
+probability_entry_label = tk.Label(r, text="Probability %").grid(row=3, column=5)
+probability_entry = tk.Entry(r)
+probability_entry.grid(row=3, column=6)
 
 #Grid Width
-distortion_entry_label = tk.Label(r, text="Grid Width").grid(row=4, column=5)
-distortion_entry = tk.Entry(r).grid(row=4, column=6)
+grid_W_entry_label = tk.Label(r, text="Grid Width").grid(row=4, column=5)
+grid_W_entry = tk.Entry(r)
+grid_W_entry.grid(row=4, column=6)
 
 #Grid Height
-distortion_entry_label = tk.Label(r, text="Grid Height").grid(row=5, column=5)
-distortion_entry = tk.Entry(r).grid(row=5, column=6)
+grid_H_entry_label = tk.Label(r, text="Grid Height").grid(row=5, column=5)
+grid_H_entry = tk.Entry(r)
+grid_H_entry.grid(row=5, column=6)
 
 r.resizable(0, 0)
 r.mainloop()
