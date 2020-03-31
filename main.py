@@ -54,7 +54,7 @@ def apply():
         os.remove(f)
 
     p = Augmentor.Pipeline("data/image/logo")
-    p.random_distortion(probability=1, grid_width=4, grid_height=4, magnitude=8) #Distorts watermark based on parameters
+    p.random_distortion(probability=1, grid_width=4, grid_height=4, magnitude=50) #Distorts watermark based on parameters
     p.sample(1) #Saves distorted watermark to logo/output in a png format
 
     img2 =  Image.open((glob.glob("data/image/logo/output/*.png"))[0]) #Augmentor doesn't allow set paths so you must pull the first file in a specific directory
@@ -67,6 +67,7 @@ def apply():
     img.save('done.png') #Saves the product image
     display_img(True) #Updates image display
 
+
 ####Tkinter section
 import tkinter as tk
 import tkinter.filedialog
@@ -78,6 +79,22 @@ display_img(True)
 btn = tk.Button(r, text='Select Image', width=25, command= lambda:display_img(False)).grid(row=2, column=4)
 btn = tk.Button(r, text='Select Watermark', width=25, command=openwater).grid(row=3, column=4)
 button = tk.Button(r, text='Produce Image', width=25, command=apply).grid(row=4, column=4)
+
+#Distortion
+distortion_entry_label = tk.Label(r, text="Distortion").grid(row=2, column=5)
+distortion_entry = tk.Entry(r).grid(row=2, column=6)
+
+#Probability
+distortion_entry_label = tk.Label(r, text="Probability").grid(row=2, column=5)
+distortion_entry = tk.Entry(r).grid(row=2, column=6)
+
+#Grid Width
+distortion_entry_label = tk.Label(r, text="Grid Width").grid(row=2, column=5)
+distortion_entry = tk.Entry(r).grid(row=2, column=6)
+
+#Grid Height
+distortion_entry_label = tk.Label(r, text="Grid Height").grid(row=2, column=5)
+distortion_entry = tk.Entry(r).grid(row=2, column=6)
 
 r.resizable(0, 0)
 r.mainloop()
