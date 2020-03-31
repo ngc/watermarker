@@ -76,25 +76,25 @@ r.title('Watermarker')
 
 display_img(True)
 
-btn = tk.Button(r, text='Select Image', width=25, command= lambda:display_img(False)).grid(row=2, column=4)
-btn = tk.Button(r, text='Select Watermark', width=25, command=openwater).grid(row=3, column=4)
-button = tk.Button(r, text='Produce Image', width=25, command=apply).grid(row=4, column=4)
+btn = tk.Button(r, text='Select Image', width=25, command= lambda:display_img(False)).grid(row=2, column=1)
+btn = tk.Button(r, text='Select Watermark', width=25, command=openwater).grid(row=3, column=1)
+button = tk.Button(r, text='Produce Image', width=25, command=apply).grid(row=4, column=1)
 
 #Distortion
 distortion_entry_label = tk.Label(r, text="Distortion").grid(row=2, column=5)
 distortion_entry = tk.Entry(r).grid(row=2, column=6)
 
 #Probability
-distortion_entry_label = tk.Label(r, text="Probability").grid(row=2, column=5)
-distortion_entry = tk.Entry(r).grid(row=2, column=6)
+distortion_entry_label = tk.Label(r, text="Probability").grid(row=3, column=5)
+distortion_entry = tk.Entry(r).grid(row=3, column=6)
 
 #Grid Width
-distortion_entry_label = tk.Label(r, text="Grid Width").grid(row=2, column=5)
-distortion_entry = tk.Entry(r).grid(row=2, column=6)
+distortion_entry_label = tk.Label(r, text="Grid Width").grid(row=4, column=5)
+distortion_entry = tk.Entry(r).grid(row=4, column=6)
 
 #Grid Height
-distortion_entry_label = tk.Label(r, text="Grid Height").grid(row=2, column=5)
-distortion_entry = tk.Entry(r).grid(row=2, column=6)
+distortion_entry_label = tk.Label(r, text="Grid Height").grid(row=5, column=5)
+distortion_entry = tk.Entry(r).grid(row=5, column=6)
 
 r.resizable(0, 0)
 r.mainloop()
