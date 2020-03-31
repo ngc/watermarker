@@ -71,33 +71,43 @@ def apply():
 ####Tkinter section
 import tkinter as tk
 import tkinter.filedialog
+
 r = tk.Tk()
 r.title('Watermarker')
 
 display_img(True)
+
+dinsert = tk.StringVar()
+pinsert = tk.StringVar()
+g_w_insert = tk.StringVar()
+g_h_insert = tk.StringVar()
 
 btn = tk.Button(r, text='Select Image', width=25, command= lambda:display_img(False)).grid(row=2, column=1)
 btn = tk.Button(r, text='Select Watermark', width=25, command=openwater).grid(row=3, column=1)
 button = tk.Button(r, text='Produce Image', width=25, command=apply).grid(row=4, column=1)
 
 #Distortion
+dinsert.set('25')
 distortion_entry_label = tk.Label(r, text="Distortion").grid(row=2, column=5)
-distortion_entry = tk.Entry(r)
+distortion_entry = tk.Entry(r, textvariable=dinsert)
 distortion_entry.grid(row=2, column=6)
 
 #Probability
+pinsert.set('100')
 probability_entry_label = tk.Label(r, text="Probability %").grid(row=3, column=5)
-probability_entry = tk.Entry(r)
+probability_entry = tk.Entry(r, textvariable=pinsert)
 probability_entry.grid(row=3, column=6)
 
 #Grid Width
+g_w_insert.set('4')
 grid_W_entry_label = tk.Label(r, text="Grid Width").grid(row=4, column=5)
-grid_W_entry = tk.Entry(r)
+grid_W_entry = tk.Entry(r, textvariable=g_w_insert)
 grid_W_entry.grid(row=4, column=6)
 
 #Grid Height
+g_h_insert.set('4')
 grid_H_entry_label = tk.Label(r, text="Grid Height").grid(row=5, column=5)
-grid_H_entry = tk.Entry(r)
+grid_H_entry = tk.Entry(r, textvariable=g_h_insert)
 grid_H_entry.grid(row=5, column=6)
 
 r.resizable(0, 0)
