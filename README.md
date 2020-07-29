@@ -8,20 +8,21 @@ Automatic advanced watermark producing tool. This tool uses randomized image dis
 ## Usage Examples
 ---
 
-Let's think of a hypothetical yet possible scenario in which for some reason NASA wanted to watermark this image to avoid someone reposting it and taking credit for it.
+To watermark an image, you need two images, a source image and the applied watermark image.
 
+Source image.
 <img src="https://github.com/thaniel-c/misc-tools-and-projects/blob/master/WatermarkerResources/nasa_original.jpg"
      alt="nasa_original"
      width ="400" height="400" />
 
-Using Watermarker they can apply their official logo
-
+Applied watermark image.
 <img src="https://github.com/thaniel-c/misc-tools-and-projects/blob/master/WatermarkerResources/nasa_logo.png"
      alt="nasa_original"
      width ="60" height="50" />
      
 
-When the images are given as inputs into Watermarker the resulting image will be saved as 'done.png' in its root directory. (This is with maximum distortion which can be tuned)
+When the images are given as inputs into Watermarker the resulting image will be saved as 'done.png' in its root directory. 
+The following example is done with maximum distortion which can be tuned using the ui.
 
 <img src="https://github.com/thaniel-c/misc-tools-and-projects/blob/master/WatermarkerResources/done.png"
      alt="nasa_original"
@@ -29,4 +30,4 @@ When the images are given as inputs into Watermarker the resulting image will be
 
 As you can see it would be pretty hard to seperate this watermark from the image without ruining it. However, this example is drastic as many parameters can be changed within the program to make the watermark more subtle.
 
-This method of distortion was chosen because of its balance between discernability and function. The name 'NASA' is very easy to read and recognize, however with the distortion it makes it very hard for a machine learning algorithm or a person to locate and remove the watermark from the image. 
+This method of distortion was chosen because of its balance between discernability and function. The name 'NASA' is very easy to read and recognize, however with the distortion it makes it harder for a machine learning algorithm or a person to locate and remove the watermark from the image. 
